@@ -2,10 +2,10 @@ package com.psk.nashorn;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import javax.script.Bindings;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -57,7 +57,7 @@ public class Nashorn {
 	}
 	
 	/*
-	 * 자바스크립트 펑
+	 * 자바스크립트 함수호출2
 	 */
 	public static void callFunction2(){
 		System.out.println("===================== Nashorn Javascript 함수 호출2 메서드 ===========================");
