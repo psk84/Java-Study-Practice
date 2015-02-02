@@ -16,7 +16,7 @@ public class SychronousConsumer implements Runnable {
 		try {
 
 			while (true) {
-				System.out.println(queue.take());
+				System.out.println(Thread.currentThread().getName() + "/" + queue.take());
 				Thread.sleep(interval);
 			}
 		} catch (InterruptedException e) {

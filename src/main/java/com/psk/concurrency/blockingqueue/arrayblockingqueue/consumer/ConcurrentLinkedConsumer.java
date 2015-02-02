@@ -16,7 +16,7 @@ public class ConcurrentLinkedConsumer implements Runnable {
 		try {
 
 			while (true) {
-				System.out.println(queue.poll());
+				System.out.println(Thread.currentThread().getName() + "/" + queue.poll());
 				Thread.sleep(interval);
 			}
 		} catch (InterruptedException e) {

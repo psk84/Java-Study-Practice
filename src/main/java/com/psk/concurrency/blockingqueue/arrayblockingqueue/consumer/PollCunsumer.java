@@ -23,7 +23,7 @@ public class PollCunsumer implements Runnable {
 		try {
 
 			while (true) {
-				System.out.println(queue.poll(1, TimeUnit.MICROSECONDS));
+				System.out.println(Thread.currentThread().getName() + "/"+ queue.poll(1, TimeUnit.MICROSECONDS));
 				Thread.sleep(interval);
 			}
 		} catch (InterruptedException e) {

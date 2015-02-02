@@ -24,6 +24,7 @@ public class AddProducer implements Runnable {
 			while (true) {
 				boolean result = queue.add("String Add :: " + ThreadLocalRandom.current().nextInt(0,1000));
 				System.out.println("ArrayBlockingQueue Add Result :: " + result);
+				Thread.sleep(1000);
 			}
 
 		} catch (Exception e) {

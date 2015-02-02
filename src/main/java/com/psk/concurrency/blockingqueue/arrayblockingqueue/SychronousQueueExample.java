@@ -10,7 +10,7 @@ public class SychronousQueueExample {
 	public static void main(String[] args){
 		//Producer : put
 		//Consumer : take
-		putTakeSampel(2, 3000, 1000);
+		putTakeSampel(10, 500, 2000);
 		
 	}
 	
@@ -22,10 +22,14 @@ public class SychronousQueueExample {
 				producerInterval);
 		SychronousConsumer consumer = new SychronousConsumer(queue,
 				consumerInterval);
+		SychronousConsumer consumer2 = new SychronousConsumer(queue,
+				consumerInterval);
 		
 		System.out.println("[putTakeSample]Starting Wait Producer.");
 		new Thread(producer).start();
 		System.out.println("[putTakeSample ]Starting Take Consumer.");
 		new Thread(consumer).start();
+		System.out.println("[putTakeSample ]Starting Take Consumer.");
+		new Thread(consumer2).start();
 	}
 }

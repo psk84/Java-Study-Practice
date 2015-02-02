@@ -10,17 +10,18 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PutProducer implements Runnable {
 
 	protected BlockingQueue queue = null;
-	protected int interval;
 	
-	public PutProducer(BlockingQueue queue, int interval) {
+	public PutProducer(BlockingQueue queue) {
 		this.queue = queue;
-		this.interval = interval;
 	}
 
 	public void run() {
 		try {
 			while (true) {
-				queue.put("String Put :: " + ThreadLocalRandom.current().nextInt(0,1000));
+				int data = ThreadLocalRandom.current().nextInt(0,1000);
+				System.out.println("Data put :: " + data);
+				queue.put("String Put :: " + data);
+				Thread.sleep(500);
 			}
 
 		} catch (InterruptedException e) {

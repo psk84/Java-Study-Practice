@@ -23,6 +23,7 @@ public class OfferProducer implements Runnable {
 			while (true) {
 				boolean result = queue.offer("String Offer :: " + ThreadLocalRandom.current().nextInt(0,1000));
 				System.out.println("ArrayBlockingQueue Offer Result :: " + result);
+				Thread.sleep(1000);
 			}
 
 		} catch (Exception e) {
